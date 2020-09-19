@@ -10,20 +10,15 @@ ofstream fout("out.txt");
 #endif
 
 int main() {
-    int n;
-    cin >> n;
-    char c;
-    vector<int> text(256);
-    while (cin >> c) {
-        if (isalpha(c))
-            text[int(toupper(c))]++;
+    vector<string> str;
+    string in;
+    int imax = 0;
+    while (getline(cin, in)) {
+        imax = max(imax, int(in.size()));
+        str.push_back(in);
     }
-    vector<pair<int,char> > ans;
-    for (int i = 0; i < 256; i++)
-        if (text[i])
-            ans.push_back({text[i],char(i)});
-    sort(ans.rbegin(),ans.rend());
-    for (auto [i, c] : ans)
-        cout << c << " " << i << endl;
+    for(int i=0;i<imax;i++,cout<<endl)
+        for(int j=str.size()-1;j>=0;j--)
+            cout<<str[j][i];
     return 0;
 }

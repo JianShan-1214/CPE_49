@@ -10,7 +10,7 @@ ofstream fout("out.txt");
 #endif
 
 int main() {
-    string keyboard = " `1234567890-=qwertyuiop[]asdfghjkl;'zxcvbnm,./";
+    string keyboard = "`1234567890-=qwertyuiop[]asdfghjkl;'zxcvbnm,./";
     string in;
     while (getline(cin, in)) {
         for (auto i : in) {
